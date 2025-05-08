@@ -1,29 +1,29 @@
 [
     {
-      "task_display_name": "Purchase Investment Pool Units",
+      "task_display_name": "HR Audit Report",
       "read_of_update": "U",
       "tenant_n": "active",
-      "product": "Endowments",
+      "product": "Team2",
       "total_time": 3112.15,
       "avg_execution_time": 311.215,
       "p95_execution_time": 311.215,
       "request_count": 10
     },
     {
-        "task_display_name": "Basis Limit Audit Report",
+        "task_display_name": "Financials Audit Report",
         "read_of_update": "X",
         "tenant_n": "testing",
-        "product": "Grants",
+        "product": "Team1",
         "total_time": 2023.12,
         "avg_execution_time": 183.129,
         "p95_execution_time": 183.129,
         "request_count": 10
       },
       {
-        "task_display_name": "ACP Audit Report - Manual Journals",
+        "task_display_name": "Test Report - Manual Journals",
         "read_of_update": "X",
         "tenant_n": "demo",
-        "product": "Grants",
+        "product": "Team1",
         "total_time": 1814.08,
         "avg_execution_time": 181.408,
         "p95_execution_time": 183.408,
