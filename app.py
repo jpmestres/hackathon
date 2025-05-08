@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import json
+import re
 
 app = Flask(__name__)
 
@@ -33,11 +34,30 @@ def get_items():
     if query_params:
         results = []
         for item in data_to_filter:
-            # Check if item matches all query parameters
-            matches = all(
-                str(item.get(key, '')) == value
-                for key, value in query_params.items()
-            )
+            matches = True
+            for key, value in query_params.items():
+                # Check if the value contains a comparison operator
+                if any(op in value for op in ['<', '>', '<=', '>=']):
+                    # Extract the operator and number
+                    match = re.match(r'([<>=]+)(\d+\.?\d*)', value)
+                    if match:
+                        op, num = match.groups()
+                        num = float(num)
+                        item_value = float(item.get(key, 0))
+                        
+                        if op == '<' and not (item_value < num):
+                            matches = False
+                        elif op == '>' and not (item_value > num):
+                            matches = False
+                        elif op == '<=' and not (item_value <= num):
+                            matches = False
+                        elif op == '>=' and not (item_value >= num):
+                            matches = False
+                else:
+                    # Regular exact match
+                    if str(item.get(key, '')) != value:
+                        matches = False
+            
             if matches:
                 results.append(item)
     else:
