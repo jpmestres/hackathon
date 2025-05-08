@@ -1,0 +1,32 @@
+[
+    {
+      "task_display_name": "Purchase Investment Pool Units",
+      "read_of_update": "U",
+      "tenant_n": "active",
+      "product": "Endowments",
+      "total_time": 3112.15,
+      "avg_execution_time": 311.215,
+      "p95_execution_time": 311.215,
+      "request_count": 10
+    },
+    {
+        "task_display_name": "Basis Limit Audit Report",
+        "read_of_update": "X",
+        "tenant_n": "testing",
+        "product": "Grants",
+        "total_time": 2023.12,
+        "avg_execution_time": 183.129,
+        "p95_execution_time": 183.129,
+        "request_count": 10
+      },
+      {
+        "task_display_name": "ACP Audit Report - Manual Journals",
+        "read_of_update": "X",
+        "tenant_n": "demo",
+        "product": "Grants",
+        "total_time": 1814.08,
+        "avg_execution_time": 181.408,
+        "p95_execution_time": 183.408,
+        "request_count": 10
+      }
+  ]
